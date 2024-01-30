@@ -22,18 +22,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: JDK 17 세팅
       uses: actions/setup-java@v3
       with:
         java-version: '17'
         distribution: 'temurin'
-    - name: init with Gradle
-      uses: gradle/gradle-build-action@v2
-    - run: gradle init
     - name: Build with Gradle
       uses: gradle/gradle-build-action@749f47bda3e44aa060e82d7b3ef7e40d953bd629
       with:
         gradle-version: 8.5
         arguments: build
-
